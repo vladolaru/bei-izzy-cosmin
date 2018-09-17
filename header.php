@@ -19,6 +19,7 @@
 
 	<?php wp_head(); ?>
 </head>
+<!--blabla-->
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
