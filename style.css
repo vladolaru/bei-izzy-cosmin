@@ -2,7 +2,7 @@
 Theme Name: izzy
 Theme URI: http://underscores.me/
 Author: Cosmin Burloiu
-Author URI: http://underscores.me/
+Author URI: https://www.facebook.com/burloiu.cosmin
 Description: Portofolio theme, created in the Pixelgrade internship
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -397,8 +397,8 @@ optgroup,
 textarea {
 	color: #404040;
 	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 15px;
+	font-size: 1.2rem;
 	line-height: 1.5;
 }
 
@@ -821,18 +821,6 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-.widget {
-	margin: 0 0 1.5em;
-	/* Make sure select elements fit in widgets. */
-}
-
-.widget select {
-	max-width: 100%;
-}
-
-/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -870,6 +858,18 @@ a:hover, a:active {
 
 .bypostauthor {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+	max-width: 100%;
 }
 
 /*--------------------------------------------------------------

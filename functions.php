@@ -120,6 +120,7 @@ add_action( 'widgets_init', 'izzy_widgets_init' );
  * Enqueue scripts and styles.
  */
 function izzy_scripts() {
+
 	wp_enqueue_style( 'izzy-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'izzy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
