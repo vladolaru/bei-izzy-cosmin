@@ -1,7 +1,7 @@
 <?php
 
 // Project Custom Post Type
-function project_init() {
+function izzy_project_init() {
 // set up project labels
 $labels = array(
 'name' => 'Projects',
@@ -34,7 +34,6 @@ $args = array(
 'title',
 'editor',
 'excerpt',
-'trackbacks',
 'custom-fields',
 'comments',
 'revisions',
@@ -46,7 +45,11 @@ $args = array(
 register_post_type( 'project', $args );
 
 // register taxonomy
-register_taxonomy('project_category', 'project', array('hierarchical' => true, 'label' => 'Category', 'query_var' => true, 'rewrite' => array( 'slug' => 'project-category' )));
+register_taxonomy('project_category', 'project',
+	array('hierarchical' => true,
+	      'label' => 'Category',
+	      'query_var' => true,
+	      'rewrite' => array( 'slug' => 'project-category' )));
 }
 
-add_action( 'init', 'project_init' );
+add_action( 'init', 'izzy_project_init' );

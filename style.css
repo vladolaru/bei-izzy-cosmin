@@ -1,9 +1,9 @@
 /*!
 Theme Name: izzy
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
+Theme URI:
+Author: Burloiu Cosmin
+Author URI: https://facebook.com/cosmin.burloiu
+Description: First Wordpress Site, and the final project in the Pixelgrade Internship!
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -386,8 +386,8 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
+	font-family: "Crimson Text";
+	font-size: 20px;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -415,7 +415,7 @@ address {
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
+	font-size: 18.75px;
 	font-size: 0.9375rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
@@ -426,7 +426,7 @@ pre {
 
 code, kbd, tt, var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
+	font-size: 18.75px;
 	font-size: 0.9375rem;
 }
 
@@ -471,7 +471,7 @@ hr {
 }
 
 ul, ol {
-	margin: 0 3em 1.5em 0;
+	margin: 0 0 1.5em 3em;
 }
 
 ul {
@@ -485,7 +485,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-right: 1.5em;
+	margin-left: 1.5em;
 }
 
 dt {
@@ -525,7 +525,7 @@ input[type="submit"] {
 	border-radius: 3px;
 	background: #e6e6e6;
 	color: rgba(0, 0, 0, 0.8);
-	font-size: 12px;
+	font-size: 15px;
 	font-size: 0.75rem;
 	line-height: 1;
 	padding: .6em 1em .4em;
@@ -604,11 +604,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: goldenrod;
 }
 
 a:visited {
-	color: purple;
+	color: goldenrod;
 }
 
 a:hover, a:focus, a:active {
@@ -637,12 +637,12 @@ a:hover, a:active {
 	display: none;
 	list-style: none;
 	margin: 0;
-	padding-right: 0;
+	padding-left: 0;
 }
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: right;
+	float: left;
 	position: absolute;
 	top: 100%;
 	left: -999em;
@@ -741,7 +741,7 @@ a:hover, a:active {
 	clip-path: none;
 	color: #21759b;
 	display: block;
-	font-size: 14px;
+	font-size: 17.5px;
 	font-size: 0.875rem;
 	font-weight: bold;
 	height: auto;
@@ -827,6 +827,13 @@ a:hover, a:active {
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+## Global Layouts
+--------------------------------------------------------------*/
+.site-content {
+	padding: 1rem;
+}
+
+/*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
 .sticky {
@@ -845,6 +852,7 @@ a:hover, a:active {
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+	padding: 1em;
 }
 
 .page-links {
