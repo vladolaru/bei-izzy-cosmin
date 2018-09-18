@@ -145,7 +145,7 @@ function project_init() {
 		'hierarchical' => false,
 		'rewrite' => array('slug' => 'project'),
 		'query_var' => true,
-		'menu_icon' => 'dashicons-randomize',
+		'menu_icon' => 'dashicons-admin-customizer',
 		'supports' => array(
 			'title',
 			'editor',
@@ -203,6 +203,11 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Extra additions.
+ */
+require get_template_directory() . '/inc/extras.php';
 
 /**
  * Load Jetpack compatibility file.
