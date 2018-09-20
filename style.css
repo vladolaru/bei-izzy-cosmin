@@ -705,6 +705,7 @@ a:hover, a:active {
 .post-navigation .nav-previous {
 	float: left;
 	width: 50%;
+	color: #cc0000;
 }
 
 .comment-navigation .nav-next,
@@ -713,6 +714,7 @@ a:hover, a:active {
 	float: right;
 	text-align: right;
 	width: 50%;
+	color: #cc0000;
 }
 
 /*--------------------------------------------------------------
@@ -832,6 +834,12 @@ a:hover, a:active {
 .site-content {
 	padding: 1rem;
 }
+
+#wrapper{
+	width:1200px;
+	margin:0px;
+}
+
 
 /*--------------------------------------------------------------
 ## Posts and pages

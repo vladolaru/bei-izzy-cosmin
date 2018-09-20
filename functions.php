@@ -42,6 +42,11 @@ if ( ! function_exists( 'izzy_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		/*
+		 * Resizing the thumbnails for a bigger view.
+		 */
+		set_post_thumbnail_size( 300,300,false);
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'izzy' ),
@@ -121,6 +126,10 @@ add_action( 'widgets_init', 'izzy_widgets_init' );
  * Enqueue scripts and styles.
  */
 function izzy_scripts() {
+
+	wp_enqueue_script('izzy-slick', get_template_directory_uri() . '/js/slick.js', array('jquery'),false,true);
+
+	wp_enqueue_script('main', get_template_directory_uri() .'/js/main.js', array(), null, true);
 
 	wp_enqueue_style( 'izzy-style', get_stylesheet_uri() );
 

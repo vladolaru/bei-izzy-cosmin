@@ -16,8 +16,13 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="js/slick.js"></script>
 
-	<?php wp_head(); ?>
+
+    <?php
+    wp_head();
+    ?>
 </head>
 
 
