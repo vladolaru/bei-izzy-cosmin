@@ -10,31 +10,27 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+    <header class="entry-header">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title" align="right" style="padding: 1em;">', '</h1>' );
+
+		izzy_project_slider();
+		echo '<br>';
+		the_title( '<h1 class="entry-title" align="center" style="padding: 1em;">', '</h1>' );
+
+		//Display the gallery slider of the specific project
 		?>
+    </header><!-- .entry-header -->
+	<?php
+	//Display the details of the project
 
-		<div class="one-time slider-image" id="wrapper" >
-			<div><img src="http://getdrawings.com/images/free-drawing-download-4.jpg" alt="slider image" ></div>
-			<div><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&h=350" alt="slider image"  ></div>
-			<div><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&h=350"  alt="slider image" ></div>
-		</div>
+	izzy_project_details();
 
-<?php
-		else :
-			the_title( '<h2 class="entry-title" align="center"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			echo '<p><img align="center";>' .the_post_thumbnail('medium') . '</p>';
-			izzy_display_categories();
-			//izzy_project_customer();
-			//izzy_project_year();
-			custom_excerpt(25);
-		endif;
-		?>
-	</header><!-- .entry-header -->
+	//End of the display
+	?>
 
-	<div class="entry-content">
+    <!--        Display project content-->
+    <div class="entry-content">
 		<?php
 		the_content( sprintf(
 			wp_kses(
@@ -49,14 +45,22 @@
 			get_the_title()
 		) );
 
+
+		else :
+			the_title( '<h2 class="entry-title" align="center"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_post_thumbnail( 'medium', [ 'class' => 'project-archive-thumbnail' ] );
+			izzy_project_details();
+			custom_excerpt( 25 );
+		endif;
+
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'izzy' ),
 			'after'  => '</div>',
 		) );
 		?>
-	</div><!-- .entry-content -->
+    </div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+    <footer class="entry-footer">
 		<?php izzy_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+    </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

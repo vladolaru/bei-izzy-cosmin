@@ -836,9 +836,34 @@ a:hover, a:active {
 }
 
 #wrapper{
-	width:1200px;
-	margin:0px;
+	width:100%;
+	margin:0;
+	height: 600px;
 }
+
+.img .project-archive-thumbnail{
+	float:left;
+	border:solid goldenrod 2px;
+}
+
+.project-details{
+	font-size: 18px;
+	color: #cc0000;
+}
+
+.details-block{
+	float:right;
+	padding-left:1em;
+}
+
+.slider-image{
+
+	width: 100%;
+	margin: 1px;
+	height: 600px;
+}
+
+
 
 
 /*--------------------------------------------------------------

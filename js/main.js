@@ -3,8 +3,9 @@
         $('.one-time').slick({
             slidesToShow:1,
             infinite: true,
-            speed: 2000,
+            speed: 500,
             fade: true,
+            cssEase: 'linear',
         });
     });
 } )( jQuery );

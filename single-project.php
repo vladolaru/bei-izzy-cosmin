@@ -19,14 +19,6 @@ get_header();
 
 				get_template_part( 'template-parts/content-project', get_post_type() );
 
-				//Display the details of the project
-
-//                izzy_project_year();
-//				izzy_project_customer();
-				izzy_display_categories();
-
-				//End of the display
-
 				the_post_navigation();
 
 				// If comments are open or we have at least one comment, load up the comment template.

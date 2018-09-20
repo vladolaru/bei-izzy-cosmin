@@ -84,38 +84,52 @@ add_filter( 'post_updated_messages', 'my_updated_messages' );
 
 //Year custom field display function
 if ( ! function_exists( 'izzy_project_year' ) ) {
-	if ( get_post_type( 'project' ) ) {
-		function izzy_project_year() {
-			global $wp_query;
-			$postid  = $wp_query->post->ID;
-			$string  = str_split( get_post_meta( $postid, 'year', true ), 4 );
-			$string1 = str_split( $string[1], 2 );
-			$year    = $string[0];
-			$month   = $string1[0];
-			$day     = $string1[1];
 
-			echo 'Release date: ' . $year . '.' . $month . '.' . $day . '.' . '<br>';
-			wp_reset_query();
-		}
+	function izzy_project_year() {
+		global $wp_query;
+		$postid  = $wp_query->post->ID;
+		$string  = str_split( get_post_meta( $postid, 'year', true ), 4 );
+		$string1 = str_split( $string[1], 2 );
+		$year    = $string[0];
+		$month   = $string1[0];
+		$day     = $string1[1];
+
+		echo '<p class="project-details">' . 'Release date: ' . $year . '.' . $month . '.' . $day . '.' . '</p>';
+		wp_reset_query();
 	}
+
 }
 
 //Customer custom field display function
 if ( ! function_exists( 'izzy_project_customer' ) ) {
-	if ( get_post_type( 'project' ) ) {
-		function izzy_project_customer() {
-			global $wp_query;
-			$postid = $wp_query->post->ID;
-			if ( get_post_meta( $postid, 'customer', true ) == false ) {
-				echo '<br>' . 'No customer for this theme yet';
-			} else {
-				echo '<br>' . 'Customer: ' . get_post_meta( $postid, 'customer', true ) . '<br>';
-			}
-			wp_reset_query();
+
+	function izzy_project_customer() {
+		global $wp_query;
+		$postid = $wp_query->post->ID;
+		if ( get_post_meta( $postid, 'customer', true ) == false ) {
+			echo '<p class="project-details">' . 'No customer for this theme yet.' . '</p>';
+		} else {
+			echo '<p class="project-details">' . 'Customer: ' . get_post_meta( $postid, 'customer', true ) . '</p>';
 		}
+
+		wp_reset_query();
 	}
+
 }
 
+//Grouping all the necessary details and displaying them as a block
+if ( ! function_exists( 'izzy_project_details' ) ) {
+
+
+	function izzy_project_details() {
+		echo '<div class="aligncenter details-block">' .
+		     izzy_display_categories() .
+		     izzy_project_year() .
+		     izzy_project_customer() .
+		     '</div>';
+	}
+
+}
 //Custom excerpt
 
 function custom_excerpt( $limit ) {
@@ -126,32 +140,65 @@ function custom_excerpt( $limit ) {
 	} else {
 		$content = implode( " ", $content );
 	}
-	$content = preg_replace( '/[.+]/', '', $content );
 	$content = apply_filters( 'the_content', $content );
 	$content = str_replace( ']]>', ']]&gt;', $content );
 
-	echo $content . '...';
+	echo $content;
 }
 
 //Display post ( including project) categories
-if ( ! function_exists( 'izzy_project_customer' ) ) {
+if ( ! function_exists( 'izzy_display_categories' ) ) {
 
 	function izzy_display_categories() {
 		$categories = get_the_terms( get_the_ID(), 'project_category' );
 		if ( is_array( $categories ) && ! empty( $categories ) ) {
 			foreach ( $categories as $category ) {
 				if ( 1 == count( $categories ) ) {
-					echo 'Categories: ';
+					echo '<p class="project-details">' . 'Categories: ';
 					echo $category->name;
 				} else {
-					echo 'Categories: ';
+					echo '<p class="project-details">' . 'Categories: ';
 					echo $category->name . ', ';
 				}
+				echo '</p>';
 			}
 		} else {
-			echo "Categories: None";
+			echo '<p class="project-details">' . "Categories: None" . '</p>';
 		}
 	}
 
 }
 
+if ( ! function_exists( 'izzy_project_slider' ) ) {
+
+	function izzy_project_slider() {
+		$id = get_the_ID();
+		while ( get_attached_media( 'image', $id ) ) {
+			echo '<div class="one-time" id="wrapper" >
+			<div class="slider-image"><img src="' . izzy_get_slider_images( url ) . ' " alt="slider image" ></div>';
+		}
+		echo '</div>';
+
+	}
+}
+
+if ( ! function_exists( 'izzy_project_de_baza' ) ) {
+
+	function izzy_project_de_baza() {
+		get_the_ID();
+		echo '<div class="one-time" id="wrapper" >
+			<div class="slider-image"><img src="' . izzy_get_slider_images() . ' " alt="slider image" ></div>
+			<div class="slider-image"><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&h=350" alt="slider image"  ></div>
+			<div class="slider-image"><img src="https://s.hswstatic.com/gif/leopards-bane-1.jpg"  alt="slider image" ></div>
+		</div>';
+	}
+
+}
+
+//Get images for the slider
+
+function izzy_get_slider_images($id){
+
+	$image = get_attached_media( 'image', $id );
+	echo $image;
+}
