@@ -74,7 +74,7 @@ if ( ! function_exists( 'izzy_entry_footer' ) ) :
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
+			echo '<span class="comments-link comments-link-position">';
 			comments_popup_link(
 				sprintf(
 					wp_kses(

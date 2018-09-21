@@ -16,7 +16,7 @@
 
 		izzy_project_slider();
 		echo '<br>';
-		the_title( '<h1 class="entry-title" align="center" style="padding: 1em;">', '</h1>' );
+		the_title( '<h1 class="entry-title title-project" align="center">', '</h1>' );
 
 		//Display the gallery slider of the specific project
 		?>
@@ -50,7 +50,6 @@
 			the_title( '<h2 class="entry-title" align="center"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			the_post_thumbnail( 'medium', [ 'class' => 'project-archive-thumbnail' ] );
 			izzy_project_details();
-			custom_excerpt( 25 );
 		endif;
 
 		wp_link_pages( array(

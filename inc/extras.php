@@ -88,13 +88,7 @@ if ( ! function_exists( 'izzy_project_year' ) ) {
 	function izzy_project_year() {
 		global $wp_query;
 		$postid  = $wp_query->post->ID;
-		$string  = str_split( get_post_meta( $postid, 'year', true ), 4 );
-		$string1 = str_split( $string[1], 2 );
-		$year    = $string[0];
-		$month   = $string1[0];
-		$day     = $string1[1];
-
-		echo '<p class="project-details">' . 'Release date: ' . $year . '.' . $month . '.' . $day . '.' . '</p>';
+		echo '<p class="project-details">' . 'Release year: ' . get_field('year', $postid) . '</p>';
 		wp_reset_query();
 	}
 
@@ -122,10 +116,11 @@ if ( ! function_exists( 'izzy_project_details' ) ) {
 
 
 	function izzy_project_details() {
-		echo '<div class="aligncenter details-block">' .
+		echo '<div class="details-block">' .
 		     izzy_display_categories() .
 		     izzy_project_year() .
 		     izzy_project_customer() .
+		     custom_excerpt(25) .
 		     '</div>';
 	}
 
@@ -136,7 +131,7 @@ function custom_excerpt( $limit ) {
 	$content = explode( ' ', get_the_content(), $limit );
 	if ( count( $content ) >= $limit ) {
 		array_pop( $content );
-		$content = implode( " ", $content ) . '...';
+		$content = implode( " ", $content ) . ' ...';
 	} else {
 		$content = implode( " ", $content );
 	}
@@ -172,33 +167,16 @@ if ( ! function_exists( 'izzy_display_categories' ) ) {
 if ( ! function_exists( 'izzy_project_slider' ) ) {
 
 	function izzy_project_slider() {
-		$id = get_the_ID();
-		while ( get_attached_media( 'image', $id ) ) {
-			echo '<div class="one-time" id="wrapper" >
-			<div class="slider-image"><img src="' . izzy_get_slider_images( url ) . ' " alt="slider image" ></div>';
+		$id     = get_the_ID();
+		$images = get_field( 'gallery', $id );
+		if ( ! empty( $images ) ) {
+      echo '<div class="one-time">';
+			foreach ( $images as $image ) {
+				echo    '<div class="slider-image"><img src="'. $image['url']. '" alt="slider image" ></div>';
+			}
+			echo '</div>';
+
 		}
-		echo '</div>';
-
 	}
 }
 
-if ( ! function_exists( 'izzy_project_de_baza' ) ) {
-
-	function izzy_project_de_baza() {
-		get_the_ID();
-		echo '<div class="one-time" id="wrapper" >
-			<div class="slider-image"><img src="' . izzy_get_slider_images() . ' " alt="slider image" ></div>
-			<div class="slider-image"><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&h=350" alt="slider image"  ></div>
-			<div class="slider-image"><img src="https://s.hswstatic.com/gif/leopards-bane-1.jpg"  alt="slider image" ></div>
-		</div>';
-	}
-
-}
-
-//Get images for the slider
-
-function izzy_get_slider_images($id){
-
-	$image = get_attached_media( 'image', $id );
-	echo $image;
-}

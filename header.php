@@ -18,6 +18,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="js/slick.js"></script>
+    <script src="https://unpkg.com/ionicons@4.4.2/dist/ionicons.js"></script>
 
 
     <?php
