@@ -642,13 +642,14 @@ a:hover, a:active {
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: -2px 3px 5px rgba(1, 1, 1, 1);
 	float: left;
 	position: absolute;
 	top: 100%;
 	left: -999em;
 	z-index: 99999;
 	display: inline-block;
+	background-color: white;
 }
 
 .main-navigation ul ul ul {
@@ -835,10 +836,49 @@ a:hover, a:active {
 ## Global Layout Izzy
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+## Search form
+--------------------------------------------------------------*/
+.search-form{
+	width:2rem;
+}
+
+/*--------------------------------------------------------------
+## Content-sidebar
+--------------------------------------------------------------*/
+.content-area {
+	float: left;
+	margin: 0 -25% 0 0;
+	width: 100%;
+}
+.site-main {
+	margin: 0 25% 0 0;
+}
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 25%;
+	background-color: #a8152e;
+	padding-left:1rem;
+}
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+
+.no-sidebar .content-area {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+.no-sidebar .site-main {
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
 ## Global Layouts
 --------------------------------------------------------------*/
 .site-content {
-	padding: 1rem;
+	padding: 1rem 0 1rem 1rem;
 }
 
 .img .project-archive-thumbnail {
@@ -857,7 +897,7 @@ a:hover, a:active {
 	float: right;
 	clear: right;
 	display: block;
-	margin-right: 40%;
+	margin-right: 30%;
 	width: 400px;
 	height: 400px;
 }
@@ -867,6 +907,7 @@ a:hover, a:active {
 	max-width: 100%;
 	width: auto;
 	height: 600px;
+	padding-right:1rem;
 }
 
 .edit-position {
@@ -927,22 +968,7 @@ button.slick-next.slick-arrow {
 .bottomMenu li a:hover { color:#CC0000; text-decoration:underline;}
 .bottomMenu li:last-child > a {border-right: none;}
 
-.sidebar-content {
-	background-color: goldenrod;
-	float: right;
-	margin-left: -100%;
-	max-width: 600px;
-	position: relative;
-	width: 30%;
-	word-wrap: break-spaces;
-	padding-left: 1rem;
-}
 
-.content-area{
-	width:70%;
-	background-color: purple;
-	float:left;
-}
 
 
 /*--------------------------------------------------------------
