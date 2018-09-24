@@ -10,10 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+	if ( is_singular() ){
+	?>
     <header class="entry-header">
 		<?php
-		if ( is_singular() ) :
-
 		izzy_project_slider();
 		echo '<br>';
 		the_title( '<h1 class="entry-title title-project" align="center">', '</h1>' );
@@ -44,20 +45,27 @@
 			),
 			get_the_title()
 		) );
+		?>
 
-
-		else :
-			the_title( '<h2 class="entry-title" align="center"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			the_post_thumbnail( 'medium', [ 'class' => 'project-archive-thumbnail' ] );
-			izzy_project_details();
-		endif;
-
+    </div><!-- .entry-content -->
+	<?php
+	}
+	else{
+		the_title( '<h2 class="entry-title" align="center"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		the_post_thumbnail( 'medium', [ 'class' => 'project-archive-thumbnail' ] );
+		?>
+        <div class="details-block">
+        <?php
+        izzy_project_details();
+        custom_excerpt( 25 );
+        ?>
+        </div>
+		<?php }
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'izzy' ),
 			'after'  => '</div>',
 		) );
 		?>
-    </div><!-- .entry-content -->
 
     <footer class="entry-footer">
 		<?php izzy_entry_footer(); ?>

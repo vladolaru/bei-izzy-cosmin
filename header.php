@@ -37,6 +37,15 @@
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
+                <nav id="site-navigation-2" class="secondary-navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Secondary Menu', 'izzy' ); ?></button>
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-2',
+						'menu_id'        => 'secondary-menu',
+					) );
+					?>
+                </nav><!-- #site-navigation-2 -->
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
 			else :

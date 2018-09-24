@@ -1,8 +1,9 @@
 .main-navigation {
 	clear: both;
-	display: block;
 	float: left;
 	width: 100%;
+	padding-right:2rem;
+
 
 	ul {
 		display: none;
@@ -17,6 +18,7 @@
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
+			display:inline-block;
 
 			ul {
 				left: -999em;
@@ -81,7 +83,8 @@
 		display: none;
 	}
 	.main-navigation ul {
-		display: block;
+		display: flex;
+		justify-content: space-evenly;
 	}
 }
 

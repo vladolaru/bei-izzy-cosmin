@@ -1,0 +1,71 @@
+/*--------------------------------------------------------------
+## Global Layouts
+--------------------------------------------------------------*/
+.site-content {
+  padding: 1rem;
+}
+
+.img .project-archive-thumbnail{
+  float:left;
+  clear:left;
+}
+
+.project-details{
+  font-size: 18px;
+  color: #cc0000;
+  margin:auto;
+  word-wrap:break-word;
+}
+
+.details-block{
+  float:right;
+  clear:right;
+  display:block;
+  margin-right: 40%;
+  width:400px;
+  height:400px;
+}
+
+.slider-image{
+  margin:auto;
+  max-width:100%;
+  width:auto;
+  height: 600px;
+}
+
+.edit-position{
+  padding-left:1rem;
+}
+
+.title-project{
+  margin: 2rem;
+}
+
+.slick-slider {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button.slick-prev.slick-arrow {
+  order: 2;
+  margin-left: auto;
+  margin-top: 1rem;
+}
+
+button.slick-next.slick-arrow {
+  order: 3;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.slick-slide img {
+  display: block;
+  width: 100%;
+}
+
+
+/*For the "Leave a comment" page.*/
+
+.comments-link-position{
+  padding-right: 10px;
+}

@@ -116,12 +116,9 @@ if ( ! function_exists( 'izzy_project_details' ) ) {
 
 
 	function izzy_project_details() {
-		echo '<div class="details-block">' .
-		     izzy_display_categories() .
+		echo izzy_display_categories() .
 		     izzy_project_year() .
-		     izzy_project_customer() .
-		     custom_excerpt(25) .
-		     '</div>';
+		     izzy_project_customer();
 	}
 
 }

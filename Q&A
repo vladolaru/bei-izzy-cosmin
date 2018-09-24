@@ -1,12 +1,17 @@
 
-1)archive, excerpt si detaliile,float left img
+1)archive, excerpt si detaliile,float left img [check]   ?//////////// cu excerptu custom
 
 2)slider[check]
 
 3)header,footer,sidebar
+custom footer, sidebar 1 si 2 pt footer widget areas
 
 4)widgets
 
 5)customizer theme options
 
-6)views si stilizare
+6)views si stilizare si sanitizare
+
+
+!!! de deimbricat codu la if-ul din content-project
+!!! excerptul sa fie WP function
