@@ -15,3 +15,7 @@ custom footer, sidebar 1 si 2 pt footer widget areas
 
 !!! de deimbricat codu la if-ul din content-project
 !!! excerptul sa fie WP function
+!!! logo sau titlu, meniul 2                        [check](a ramas logoul si cum tratam cazurile in care userul modifica meniu mai mare/stabileste un logo mai mare)
+!!! widget area in footer
+!!! sidebar cu widgets la dreapta
+!!! author box avem in twentyfifteen

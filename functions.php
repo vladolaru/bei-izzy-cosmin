@@ -80,8 +80,8 @@ if ( ! function_exists( 'izzy_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 90,
+			'width'       => 90,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -175,4 +175,9 @@ require get_template_directory() . '/inc/extras.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Add widget areas to footer.
+ */
+require get_template_directory() . '/inc/custom-footer.php';
 
