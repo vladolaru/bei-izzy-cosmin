@@ -57,8 +57,11 @@
         <div class="details-block">
         <?php
         izzy_project_details();
-        custom_excerpt( 25 );
+        izzy_custom_excerpt( 25 );
         ?>
+            <div class="continue-reading">
+                <a href=" <?php echo esc_url( get_permalink() ) ?>" rel="bookmark">Continue Reading</a>
+            </div>
         </div>
 		<?php }
 		wp_link_pages( array(

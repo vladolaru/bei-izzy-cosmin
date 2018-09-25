@@ -16,8 +16,10 @@
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
             <div class="bottomMenu">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
             </div>
+
+
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'izzy' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
@@ -30,6 +32,8 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'izzy' ), 'izzy', '<a href="http://underscores.me/">Cosmin Burloiu</a>' );
 				?>
 		</div><!-- .site-info -->
+
+		<?php get_sidebar('footer');?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

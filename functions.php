@@ -119,6 +119,26 @@ function izzy_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name' => __( 'Footer Widget Area 1', 'izzy' ),
+		'id' => 'footer-1',
+		'description' => __( 'Widget in this footer area will be shown on all posts and pages.', 'izzy' ),
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Footer Widget Area 2', 'izzy' ),
+		'id' => 'footer-2',
+		'description' => __( 'Widget in this footer area will be shown on all posts and pages.', 'izzy' ),
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'izzy_widgets_init' );
 
@@ -176,8 +196,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-/**
- * Add widget areas to footer.
- */
-require get_template_directory() . '/inc/custom-footer.php';
+
 

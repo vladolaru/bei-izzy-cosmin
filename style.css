@@ -836,10 +836,41 @@ a:hover, a:active {
 ## Global Layout Izzy
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+## Widgets Izzy
+--------------------------------------------------------------*/
+.widget-title{
+	color: white;
+}
+
+.footer-widget
+{
+	width: 25%;
+	float:right;
+}
+
+/*--------------------------------------------------------------
+## Footer menu and info
+--------------------------------------------------------------*/
+.site-info{
+	width: 30%;
+}
+/*--------------------------------------------------------------
+## Nav Links Izzy
+--------------------------------------------------------------*/
+.nav-links a{
+	font-size: 25px;
+	padding:1rem;
+}
+
+/*--------------------------------------------------------------
 ## Search form
 --------------------------------------------------------------*/
 .search-form{
 	width:2rem;
+}
+
+.search-submit{
+	padding-top: 2rem;
 }
 
 /*--------------------------------------------------------------
@@ -860,9 +891,17 @@ a:hover, a:active {
 	background-color: #a8152e;
 	padding-left:1rem;
 }
+
+.site-content .widget-area a:hover {
+	color: white;
+}
+
+
 .site-footer {
 	clear: both;
 	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
 .no-sidebar .content-area {
@@ -899,7 +938,22 @@ a:hover, a:active {
 	display: block;
 	margin-right: 30%;
 	width: 400px;
-	height: 400px;
+	height: 300px;
+	max-height:500px;
+	box-shadow: -3px 3px 5px rgba(1, 1, 1, 1);
+}
+
+.details-block p{
+	padding:5px;
+}
+
+.continue-reading{
+	text-align: right;
+	bottom: 1px;
+	left: 16px;
+	font-size: 18px;
+	padding-right: 5px;
+	background-color: black;
 }
 
 .slider-image {
@@ -954,7 +1008,10 @@ button.slick-next.slick-arrow {
 	padding: 20px 0;
 }
 
-.bottomMenu { display: block; width:960px;}
+.bottomMenu { display: block;
+	width: 100%;
+	padding-left: 1rem;
+	float: left;}
 .bottomMenu ul { display:inline; float:right;}
 .bottomMenu li { list-style-type: none; display: inline-flex; font-size: 12px; }
 .bottomMenu li a {
@@ -1031,7 +1088,7 @@ button.slick-next.slick-arrow {
 	padding-top: 1rem;
 }
 
-.sub-menu li a:focus, a:hover, a:active {
+.sub-menu li a:focus, .sub-menu li a:hover, .sub-menu li a:active {
 	background-color: black;
 }
 

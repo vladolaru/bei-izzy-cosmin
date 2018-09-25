@@ -87,8 +87,8 @@ if ( ! function_exists( 'izzy_project_year' ) ) {
 
 	function izzy_project_year() {
 		global $wp_query;
-		$postid  = $wp_query->post->ID;
-		echo '<p class="project-details">' . 'Release year: ' . get_field('year', $postid) . '</p>';
+		$postid = $wp_query->post->ID;
+		echo '<p class="project-details">' . 'Release year: ' . get_field( 'year', $postid ) . '</p>';
 		wp_reset_query();
 	}
 
@@ -124,7 +124,7 @@ if ( ! function_exists( 'izzy_project_details' ) ) {
 }
 //Custom excerpt
 
-function custom_excerpt( $limit ) {
+function izzy_custom_excerpt( $limit ) {
 	$content = explode( ' ', get_the_content(), $limit );
 	if ( count( $content ) >= $limit ) {
 		array_pop( $content );
@@ -137,6 +137,7 @@ function custom_excerpt( $limit ) {
 
 	echo $content;
 }
+
 
 //Display post ( including project) categories
 if ( ! function_exists( 'izzy_display_categories' ) ) {
@@ -167,13 +168,50 @@ if ( ! function_exists( 'izzy_project_slider' ) ) {
 		$id     = get_the_ID();
 		$images = get_field( 'gallery', $id );
 		if ( ! empty( $images ) ) {
-      echo '<div class="one-time">';
+			echo '<div class="one-time">';
 			foreach ( $images as $image ) {
-				echo    '<div class="slider-image"><img src="'. $image['url']. '" alt="slider image" ></div>';
+				echo '<div class="slider-image"><img src="' . $image['url'] . '" alt="slider image" ></div>';
 			}
 			echo '</div>';
 
 		}
 	}
 }
+
+/**
+ * Display footer widgets.
+ */
+if ( ! function_exists( 'izzy_footer_widgets' ) ) {
+
+	function izzy_footer_widgets() {
+		if ( ! is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' ) ) {
+			return;
+		}
+
+		if ( is_active_sidebar( 'footer-1' ) && ! is_active_sidebar( 'footer-2' ) ) { ?>
+            <aside id="footer-widget-area" class="widget-area footer-widget">
+				<?php dynamic_sidebar( 'footer-1' ); ?>
+            </aside><!-- #footer-1 -->
+			<?php return;
+		}
+
+		if ( ! is_active_sidebar( 'footer-1' ) && is_active_sidebar( 'footer-2' ) ) { ?>
+            <aside id="footer-widget-area" class="widget-area footer-widget">
+				<?php dynamic_sidebar( 'footer-2' ); ?>
+            </aside><!-- #footer-2 -->
+			<?php return;
+		} else {
+			?>
+            <aside id="footer-widget-area" class="widget-area footer-widget">
+				<?php dynamic_sidebar( 'footer-1' ); ?>
+            </aside><!-- #footer-1 -->
+
+            <aside id="footer-widget-area" class="widget-area footer-widget">
+				<?php dynamic_sidebar( 'footer-2' ); ?>
+            </aside><!-- #footer-2 -->
+
+		<?php }
+	}
+} ?>
+
 
