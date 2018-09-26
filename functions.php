@@ -139,6 +139,36 @@ function izzy_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Front Sidebar 1', 'izzy' ),
+		'id'            => 'front-sidebar-1',
+		'description'   => esc_html__( 'Main widget area on the front page.', 'izzy' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Front Sidebar 2', 'izzy' ),
+		'id'            => 'front-sidebar-2',
+		'description'   => esc_html__( 'Secondary widget area on the front page.', 'izzy' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Front Sidebar 3', 'izzy' ),
+		'id'            => 'front-sidebar-3',
+		'description'   => esc_html__( 'Third widget area on the front page.', 'izzy' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'izzy_widgets_init' );
 
@@ -185,7 +215,7 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Extra additions.
+ * Extra additions, for the izzy theme.
  */
 require get_template_directory() . '/inc/extras.php';
 
@@ -195,6 +225,15 @@ require get_template_directory() . '/inc/extras.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+/**
+ * Load all izzy widgets.
+ */
+require get_template_directory() . '/inc/widgets/class-izzy-widget-latest-posts.php';
+
+require get_template_directory() . '/inc/widgets/class-izzy-widget-latest-projects.php';
+
 
 
 

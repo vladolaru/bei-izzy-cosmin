@@ -124,19 +124,21 @@ if ( ! function_exists( 'izzy_project_details' ) ) {
 }
 //Custom excerpt
 
-function izzy_custom_excerpt( $limit ) {
-	$content = explode( ' ', get_the_content(), $limit );
-	if ( count( $content ) >= $limit ) {
-		array_pop( $content );
-		$content = implode( " ", $content ) . ' ...';
-	} else {
-		$content = implode( " ", $content );
-	}
-	$content = apply_filters( 'the_content', $content );
-	$content = str_replace( ']]>', ']]&gt;', $content );
-
-	echo $content;
+function izzy_custom_excerpt( ) {
+	return get_the_excerpt();
 }
+
+function custom_excerpt_length( $length ) {
+	if ( get_post_type_object( 'project' ) ) {
+		return 25;
+	}
+    if ( get_post_type_object( 'post' ) )
+	{
+		return 50;
+	}
+}
+
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
 //Display post ( including project) categories
@@ -212,6 +214,39 @@ if ( ! function_exists( 'izzy_footer_widgets' ) ) {
 
 		<?php }
 	}
-} ?>
+}
+
+/**
+ * Display front page widgets.
+ */
+if ( ! function_exists( 'izzy_front_page_widgets' ) ) {
+
+	function izzy_front_page_widgets() {
+
+		if ( is_active_sidebar( 'front-sidebar-1' ) ) { ?>
+            <aside id="front-widget-area-1" class="widget-area-front front-widget-1">
+				<?php dynamic_sidebar( 'front-sidebar-1' ); ?>
+            </aside><!-- #front-sidebar-1 -->
+			<?php
+		}
+
+		if ( is_active_sidebar( 'front-sidebar-2' ) ) { ?>
+            <aside id="front-widget-area-2" class="widget-area-front front-widget-2">
+				<?php dynamic_sidebar( 'front-sidebar-2' ); ?>
+            </aside><!-- #front-sidebar-2 -->
+			<?php
+		}
+
+		if ( is_active_sidebar( 'front-sidebar-3' ) ) { ?>
+            <aside id="front-widget-area-3" class="widget-area-front front-widget-3">
+				<?php dynamic_sidebar( 'front-sidebar-3' ); ?>
+            </aside><!-- #front-sidebar-3 -->
+			<?php
+		}
+	return;
+	}
+}
+
+?>
 
 

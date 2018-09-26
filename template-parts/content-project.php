@@ -57,7 +57,7 @@
         <div class="details-block">
         <?php
         izzy_project_details();
-        izzy_custom_excerpt( 25 );
+        echo "<p class='excerpt'>". izzy_custom_excerpt() . "</p>";
         ?>
             <div class="continue-reading">
                 <a href=" <?php echo esc_url( get_permalink() ) ?>" rel="bookmark">Continue Reading</a>

@@ -821,7 +821,11 @@ a:hover, a:active {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 1.5em;
+	/*margin: 0 0 1.5em;*/
+	margin: 10px 10px 10px 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
 	/* Make sure select elements fit in widgets. */
 }
 
@@ -833,8 +837,14 @@ a:hover, a:active {
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Global Layout Izzy
+# Global Layout Izzy
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Excerpt
+--------------------------------------------------------------*/
+.excerpt{
+	font-size: 18px;
+}
 /*--------------------------------------------------------------
 ## Widgets Izzy
 --------------------------------------------------------------*/
@@ -845,7 +855,9 @@ a:hover, a:active {
 .footer-widget
 {
 	width: 25%;
-	float:right;
+	float: right;
+	list-style: none;
+	margin-top: -2%;
 }
 
 /*--------------------------------------------------------------
@@ -872,9 +884,31 @@ a:hover, a:active {
 .search-submit{
 	padding-top: 2rem;
 }
+/*--------------------------------------------------------------
+## Content front page
+--------------------------------------------------------------*/
+.front-widget-1{
+	width: 100%;
+	background-color: #a8152e;
+	margin:1rem 1rem 1rem 0;
+}
+
+.front-widget-2 {
+	width: 60%;
+	height: 20%;
+	background-color: #a8152e;
+	float: left;
+}
+
+.front-widget-3{
+	width: 38%;
+	background-color: #a8152e;
+	margin: 0;
+	float: right;
+}
 
 /*--------------------------------------------------------------
-## Content-sidebar
+## Content sidebar
 --------------------------------------------------------------*/
 .content-area {
 	float: left;
@@ -896,7 +930,6 @@ a:hover, a:active {
 	color: white;
 }
 
-
 .site-footer {
 	clear: both;
 	width: 100%;
@@ -911,6 +944,10 @@ a:hover, a:active {
 }
 .no-sidebar .site-main {
 	margin-right: 0;
+}
+
+.no-sidebar .site-front-page {
+	margin-right: 1rem;
 }
 
 /*--------------------------------------------------------------
