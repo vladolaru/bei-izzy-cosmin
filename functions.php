@@ -121,9 +121,9 @@ function izzy_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Widget Area 1', 'izzy' ),
+		'name' => esc_html__( 'Footer Widget Area 1', 'izzy' ),
 		'id' => 'footer-1',
-		'description' => __( 'Widget in this footer area will be shown on all posts and pages.', 'izzy' ),
+		'description' => esc_html__( 'Widget in this footer area will be shown on all posts and pages.', 'izzy' ),
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</li>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -131,9 +131,9 @@ function izzy_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Widget Area 2', 'izzy' ),
+		'name' => esc_html__( 'Footer Widget Area 2', 'izzy' ),
 		'id' => 'footer-2',
-		'description' => __( 'Widget in this footer area will be shown on all posts and pages.', 'izzy' ),
+		'description' => esc_html__( 'Widget in this footer area will be shown on all posts and pages.', 'izzy' ),
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</li>',
 		'before_title'  => '<h2 class="widget-title">',

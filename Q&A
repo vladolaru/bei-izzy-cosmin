@@ -1,22 +1,24 @@
 
-1)archive, excerpt si detaliile,float left img [check]
+1)archive, excerpt si detaliile,float left img                                              [check]
 
-2)slider[check]
+2)slider                                                                                    [check]
 
-3)header,footer,sidebar[check]
+3)header,footer,sidebar                                                                     [check]
 
-4)widgets       [check]
+4)widgets                                                                                   [check]
 
 5)customizer theme options
 
-6)sa tratez posts la fel cum am tratat si projects, cu trasaturile aferente
+6)sa tratez posts la fel cum am tratat si projects, cu trasaturile aferente                 [check]
 
-7)views si stilizare si sanitizare SI ESCAPEURI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+7)views si stilizare si sanitizare                                                           [check ]
+
+8)SI ESCAPEURI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 
 
 
 
-!!! de deimbricat codu la if-ul din content-project
+!!! de deimbricat codu la if-ul din content-project                                         [check]
 
 !!! excerptul sa fie WP function                                                            [check]
 
@@ -28,7 +30,7 @@
 
 !!!Full width page template                                                                  [check]
 
-!!!front page cu widgets                                                                     [50%]
+!!!front page cu widgets                                                                     [check]
 
 !!! cand am o singura poza in slider image.
 
@@ -41,3 +43,5 @@
 !!! author box (avem in twentyfifteen)
 
 !!! de revazut codul la widgets ca sa il intelegi mai bine
+
+!!!pig latin la final

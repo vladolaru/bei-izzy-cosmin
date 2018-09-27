@@ -69,12 +69,12 @@ if ( ! function_exists( 'izzy_entry_footer' ) ) :
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'izzy' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'izzy' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<br><span class="tags-links">' . esc_html__( 'Tagged %1$s', 'izzy' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link comments-link-position">';
+			echo '<br><span class="comments-link comments-link-position">';
 			comments_popup_link(
 				sprintf(
 					wp_kses(

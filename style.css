@@ -866,6 +866,13 @@ a:hover, a:active {
 .site-info{
 	width: 30%;
 }
+
+.no-thumbnail{
+	width: 5%;
+	height: 2px;
+	text-align: center;
+	margin-left: 15%;
+}
 /*--------------------------------------------------------------
 ## Nav Links Izzy
 --------------------------------------------------------------*/
@@ -873,6 +880,11 @@ a:hover, a:active {
 	font-size: 25px;
 	padding:1rem;
 }
+
+.edit-link{
+	padding-left:1rem;
+}
+
 
 /*--------------------------------------------------------------
 ## Search form
@@ -957,6 +969,32 @@ a:hover, a:active {
 	padding: 1rem 0 1rem 1rem;
 }
 
+.post-image{
+	width: 100%;
+	text-align: center;
+	padding: 2rem;
+	height: 50%;
+}
+
+.img .post-archive-thumbnail{
+	float:left;
+	clear:left;
+}
+
+.details-block-post{
+	float: right;
+	width: 500px;
+	max-height: 700px;
+	display: block;
+	margin-right: 20%;
+	margin-bottom: 3rem;
+	box-shadow: -3px 3px 5px rgba(1, 1, 1, 1);
+}
+
+.details-block-post span{
+	padding-right: 1.5rem;
+}
+
 .img .project-archive-thumbnail {
 	float: left;
 	clear: left;
@@ -975,8 +1013,7 @@ a:hover, a:active {
 	display: block;
 	margin-right: 30%;
 	width: 400px;
-	height: 300px;
-	max-height:500px;
+	max-height:700px;
 	box-shadow: -3px 3px 5px rgba(1, 1, 1, 1);
 }
 
@@ -986,11 +1023,19 @@ a:hover, a:active {
 
 .continue-reading{
 	text-align: right;
-	bottom: 1px;
-	left: 16px;
 	font-size: 18px;
 	padding-right: 5px;
 	background-color: black;
+}
+
+.entry-title-post-archive{
+	text-align: center;
+	padding-top: 2rem;
+}
+
+.entry-title-project-archive{
+	text-align: center;
+	padding-top: 2rem;
 }
 
 .slider-image {
