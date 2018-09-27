@@ -7,32 +7,29 @@
 
 4)widgets                                                                                   [check]
 
-5)customizer theme options
-
 6)sa tratez posts la fel cum am tratat si projects, cu trasaturile aferente                 [check]
 
-7)views si stilizare si sanitizare                                                           [check ]
+7)views si stilizare                                                                        [check ]
 
-8)SI ESCAPEURI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+8)SI ESCAPEURI + SANITIZARE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+5)customizer theme options
 
 
 
 
-!!! de deimbricat codu la if-ul din content-project                                         [check]
 
-!!! excerptul sa fie WP function                                                            [check]
+!!! de deimbricat codu la if-ul din content-project                                          [check]
 
-!!! titlu, meniul 2                                                                         [check]
-(a ramas cum tratam cazurile in care userul modifica meniu mai
-    mare/stabileste un logo mai mare!!!!)
+!!! excerptul sa fie WP function                                                             [check]
 
-!!!logo
+!!! titlu, meniul 2                                                                          [check]
+
+!!!logo                                                                                      [check]
 
 !!!Full width page template                                                                  [check]
 
 !!!front page cu widgets                                                                     [check]
-
-!!! cand am o singura poza in slider image.
 
 !!! cand e text prea mare sau cu multe spatii la excerpt la arhiva                           [check]
 
@@ -40,8 +37,10 @@
 
 !!! sidebar cu widgets, la dreapta                                                           [check]
 
-!!! author box (avem in twentyfifteen)
+!!! author box (avem in twentyfifteen)                                                       [check]
 
-!!! de revazut codul la widgets ca sa il intelegi mai bine
+!!! cand am o singura poza in slider image.                                                  [check]
+
+!!! de revazut codul la widgets ca sa il intelegi mai bine + customizer
 
 !!!pig latin la final

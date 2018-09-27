@@ -51,6 +51,7 @@ if ( ! function_exists( 'izzy_setup' ) ) :
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'izzy' ),
 			'menu-2' => esc_html__('Secondary','izzy'),
+			'menu-3' => esc_html__('Third','izzy'),
 		) );
 
 		/*
@@ -226,6 +227,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Load Customizer Theme Options.
+ */
+require get_template_directory() . '/inc/custom-theme-options.php';
+
 
 /**
  * Load all izzy widgets.
@@ -233,6 +239,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 require get_template_directory() . '/inc/widgets/class-izzy-widget-latest-posts.php';
 
 require get_template_directory() . '/inc/widgets/class-izzy-widget-latest-projects.php';
+
+/**
+ * Load the Customizer Theme Options.
+ */
+require get_template_directory() . '/inc/custom-theme-options.php';
 
 
 

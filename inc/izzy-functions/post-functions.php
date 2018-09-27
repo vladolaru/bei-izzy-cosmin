@@ -22,7 +22,7 @@ if ( ! function_exists( 'izzy_archive_post' ) ) {
 		izzy_entry_footer();
 		echo "</div><!-- .entry-meta -->";
 		echo "<br>";
-		echo "<p class='excerpt'>" . izzy_custom_excerpt() . "</p>";
+		echo "<p class='excerpt'>" . get_the_excerpt() . "</p>";
 		echo "<div class='continue-reading'>
         <a href='" . esc_url( get_permalink() ) . "' rel='bookmark'>Continue Reading</a></div></div><!-- .details-block-post -->";
 	}
@@ -45,10 +45,14 @@ if ( ! function_exists( 'izzy_single_post' ) ) {
 
 		echo "</div><!-- .entry-meta -->";
 		echo "</header><!-- .entry-header -->";
-		echo "<div class='post-image'>";
-		the_post_thumbnail( 'large', [ 'class' => 'post-single-thumbnail' ] );
-
-		echo "</div>";
+		if(	has_post_thumbnail() ) {
+			echo "<div class='post-image'>";
+			the_post_thumbnail( 'large', [ 'class' => 'post-single-thumbnail' ] );
+			echo "</div>";
+		}
+		else{
+			echo "<div class='no-thumbnail-single-post'><p >There is no featured image available for this post.</p></div>";
+		}
 
 		echo "<div class='entry-content'>";
 		the_content( sprintf(
@@ -63,6 +67,7 @@ if ( ! function_exists( 'izzy_single_post' ) ) {
 			),
 			get_the_title()
 		) );
+
 
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'izzy' ),

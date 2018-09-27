@@ -29,20 +29,6 @@ if ( ! function_exists( 'izzy_project_customer' ) ) {
 
 }
 
-//Grouping all the necessary details and displaying them as a block
-if ( ! function_exists( 'izzy_project_details' ) ) {
-
-
-	function izzy_project_details() {
-		echo izzy_display_categories() .
-		     izzy_project_year() .
-		     izzy_project_customer();
-	}
-
-}
-
-
-
 //Display post ( including project) categories
 if ( ! function_exists( 'izzy_display_categories' ) ) {
 
@@ -66,6 +52,18 @@ if ( ! function_exists( 'izzy_display_categories' ) ) {
 
 }
 
+//Grouping all the necessary details and displaying them as a block
+if ( ! function_exists( 'izzy_project_details' ) ) {
+
+
+	function izzy_project_details() {
+		echo izzy_display_categories() .
+		     izzy_project_year() .
+		     izzy_project_customer();
+	}
+
+}
+
 /**
  * Outputs the content of a single project.
  */
@@ -83,7 +81,7 @@ if ( ! function_exists( 'izzy_single_project' ) ) {
 
 		//Display the gallery slider of the specific project
 
-		echo "</header><!-- .entry-header -->";
+		echo "</header><!-- .entry-header-project -->";
 
 		//Display the details of the project
 
@@ -120,12 +118,19 @@ if ( ! function_exists( 'izzy_archive_project' ) ) {
 
 function izzy_archive_project() {
 the_title( '<h2 class="entry-title-project-archive"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-the_post_thumbnail( 'medium', [ 'class' => 'project-archive-thumbnail' ] );
+
+if(	has_post_thumbnail() ) {
+		the_post_thumbnail( 'medium', [ 'class' => 'project-archive-thumbnail' ] );
+	}
+	else
+	{
+		echo "<div class='no-thumbnail'><p >There is no featured image available.</p></div>";
+	}
 ?>
 <div class="details-block">
 	<?php
 	izzy_project_details();
-	echo "<p class='excerpt'>" . izzy_custom_excerpt() . "</p>";
+	echo "<p class='excerpt'>" . get_the_excerpt() . "</p>";
     echo "<div class='continue-reading'>
         <a href='" . esc_url( get_permalink() ) . "' rel='bookmark'>Continue Reading</a></div></div>";
 

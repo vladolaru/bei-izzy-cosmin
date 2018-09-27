@@ -15,9 +15,17 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-            <div class="bottomMenu">
-				<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
-            </div>
+<!--            <div class="bottomMenu">-->
+                <nav id="site-navigation-3" class="third-navigation">
+                    <button class="menu-toggle" aria-controls="third-menu" aria-expanded="false"><?php esc_html_e( 'Third Menu', 'izzy' ); ?></button>
+		            <?php
+		            wp_nav_menu( array(
+			            'theme_location' => 'menu-3',
+			            'menu_id'        => 'third-menu',
+		            ) );
+		            ?>
+                </nav><!-- #site-navigation-3 -->
+<!--            </div>-->
 
 
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'izzy' ) ); ?>">
