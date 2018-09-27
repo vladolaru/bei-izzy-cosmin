@@ -5,7 +5,8 @@ if ( ! function_exists( 'izzy_archive_post' ) ) {
 	function izzy_archive_post() {
 
 		the_title( '<h2 class="entry-title-post-archive"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		if(	has_post_thumbnail() ) {
+
+		if(	has_post_thumbnail() && get_theme_mod( 'post-show-featured-image-on-post-archive-page.' ) ) {
 			the_post_thumbnail( 'medium', [ 'class' => 'post-archive-thumbnail' ] );
 		}
 		else
@@ -15,11 +16,17 @@ if ( ! function_exists( 'izzy_archive_post' ) ) {
 
 		echo "<div class='details-block-post'>";
 		echo "<div class='entry-meta'>";
-		izzy_posted_on();
+		if(get_theme_mod( 'post-show-date-on-post-archive-page.' ) ) {
+			izzy_posted_on();
+		}
 		echo "<br>";
-		izzy_posted_by();
+		if(get_theme_mod( 'post-show-author-on-post-archive-page.' ) ) {
+			izzy_posted_by();
+		}
 		echo "<br>";
-		izzy_entry_footer();
+		if(get_theme_mod( 'post-show-categories-on-post-archive-page.' ) ) {
+			izzy_entry_footer();
+		}
 		echo "</div><!-- .entry-meta -->";
 		echo "<br>";
 		echo "<p class='excerpt'>" . get_the_excerpt() . "</p>";
@@ -45,12 +52,13 @@ if ( ! function_exists( 'izzy_single_post' ) ) {
 
 		echo "</div><!-- .entry-meta -->";
 		echo "</header><!-- .entry-header -->";
-		if(	has_post_thumbnail() ) {
+		if(	has_post_thumbnail() && get_theme_mod( 'post-show-featured-image-on-post-archive-page.' ) ) {
 			echo "<div class='post-image'>";
 			the_post_thumbnail( 'large', [ 'class' => 'post-single-thumbnail' ] );
 			echo "</div>";
 		}
-		else{
+		else
+		{
 			echo "<div class='no-thumbnail-single-post'><p >There is no featured image available for this post.</p></div>";
 		}
 
@@ -74,7 +82,11 @@ if ( ! function_exists( 'izzy_single_post' ) ) {
 			'after'  => '</div>',
 		) );
 
-		echo "</div><!-- .entry-content -->";
+		echo "</div><!-- .entry-content -->" . "<br>" . "<br>";
 
-	}
+		if(get_theme_mod( 'post-show-author-box-on-single-post-page.' ) ) {
+			get_template_part('/inc/custom-author-box');
+		}
+
+		}
 }

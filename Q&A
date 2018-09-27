@@ -11,9 +11,7 @@
 
 7)views si stilizare                                                                        [check ]
 
-8)SI ESCAPEURI + SANITIZARE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-5)customizer theme options
+5)customizer theme options                                                                  [check]
 
 
 
@@ -41,6 +39,8 @@
 
 !!! cand am o singura poza in slider image.                                                  [check]
 
-!!! de revazut codul la widgets ca sa il intelegi mai bine + customizer
+!!! de revazut codul la widgets ca sa il intelegi mai bine
 
-!!!pig latin la final
+!!! ESCAPEURI + SANITIZARE + pig latin la final
+
+

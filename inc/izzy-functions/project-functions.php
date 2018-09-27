@@ -30,9 +30,9 @@ if ( ! function_exists( 'izzy_project_customer' ) ) {
 }
 
 //Display post ( including project) categories
-if ( ! function_exists( 'izzy_display_categories' ) ) {
+if ( ! function_exists( 'izzy_project_categories' ) ) {
 
-	function izzy_display_categories() {
+	function izzy_project_categories() {
 		$categories = get_the_terms( get_the_ID(), 'project_category' );
 		if ( is_array( $categories ) && ! empty( $categories ) ) {
 			foreach ( $categories as $category ) {
@@ -57,9 +57,15 @@ if ( ! function_exists( 'izzy_project_details' ) ) {
 
 
 	function izzy_project_details() {
-		echo izzy_display_categories() .
-		     izzy_project_year() .
-		     izzy_project_customer();
+		if ( get_theme_mod( 'project-show-categories-on-project-archive-page.' ) ){
+			 izzy_project_categories();
+        }
+		if ( get_theme_mod( 'project-show-year-on-project-archive-page.' ) ){
+			izzy_project_year();
+		}
+		if ( get_theme_mod( 'project-show-customer-on-project-archive-page.' ) ){
+			izzy_project_customer();
+		}
 	}
 
 }
