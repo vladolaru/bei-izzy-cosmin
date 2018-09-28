@@ -11,7 +11,7 @@ if ( ! function_exists( 'izzy_archive_post' ) ) {
 		}
 		else
 			{
-				echo "<div class='no-thumbnail'><p >There is no featured image available.</p></div>";
+				echo "<div class='no-thumbnail'><p>" . __("There is no featured image available.") . "</p></div>";
 			}
 
 		echo "<div class='details-block-post'>";
@@ -31,7 +31,7 @@ if ( ! function_exists( 'izzy_archive_post' ) ) {
 		echo "<br>";
 		echo "<p class='excerpt'>" . get_the_excerpt() . "</p>";
 		echo "<div class='continue-reading'>
-        <a href='" . esc_url( get_permalink() ) . "' rel='bookmark'>Continue Reading</a></div></div><!-- .details-block-post -->";
+        <a href='" . esc_url( get_permalink() ) . "' rel='bookmark'>" . __("Continue Reading"). "</a></div></div><!-- .details-block-post -->";
 	}
 }
 
@@ -59,7 +59,7 @@ if ( ! function_exists( 'izzy_single_post' ) ) {
 		}
 		else
 		{
-			echo "<div class='no-thumbnail-single-post'><p >There is no featured image available for this post.</p></div>";
+			echo "<div class='no-thumbnail-single-post'><p>" . __("There is no featured image available for this post.") . "</p></div>";
 		}
 
 		echo "<div class='entry-content'>";

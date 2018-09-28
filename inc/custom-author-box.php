@@ -31,11 +31,5 @@
  </i>
  </a>
 		<?php endif; ?>
-		<?php if (get_the_author_meta('googleplus') != ''): ?>
-			<a class="author-link g" title="Follow on Google+" href="<?php echo get_the_author_meta('googleplus'); ?>" target="_blank">
- <i class="fa fa-google-plus">
- </i>
- </a>
-		<?php endif; ?>
  </span>
 </div>

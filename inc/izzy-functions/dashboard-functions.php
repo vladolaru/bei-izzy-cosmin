@@ -3,19 +3,19 @@
 function izzy_project_init() {
 // set up project labels
 	$labels = array(
-		'name'               => 'Projects',
-		'singular_name'      => 'Project',
-		'add_new'            => 'Add New Project',
-		'add_new_item'       => 'Add New Project',
-		'edit_item'          => 'Edit Project',
-		'new_item'           => 'New Project',
-		'all_items'          => 'All Projects',
-		'view_item'          => 'View Project',
-		'search_items'       => 'Search Projects',
-		'not_found'          => 'No Projects Found',
-		'not_found_in_trash' => 'No Projects found in Trash',
+		'name'               =>  __(' Projects'),
+		'singular_name'      =>  __(' Project'),
+		'add_new'            =>  __(' Add New Project'),
+		'add_new_item'       =>  __(' Add New Project'),
+		'edit_item'          =>  __(' Edit Project'),
+		'new_item'           =>  __(' New Project'),
+		'all_items'          =>  __(' All Projects'),
+		'view_item'          =>  __(' View Project'),
+		'search_items'       =>  __(' Search Projects'),
+		'not_found'          =>  __(' No Projects Found'),
+		'not_found_in_trash' =>  __(' No Projects found in Trash'),
 		'parent_item_colon'  => '',
-		'menu_name'          => 'Projects',
+		'menu_name'          =>  __('Projects'),
 	);
 
 // register post type
@@ -41,13 +41,13 @@ function izzy_project_init() {
 			'page-attributes'
 		)
 	);
-	register_post_type( 'project', $args );
+	register_post_type(  __('project'), $args );
 
 // register taxonomy
-	register_taxonomy( 'project_category', 'project',
+	register_taxonomy(  __('project_category'), 'project',
 		array(
 			'hierarchical' => true,
-			'label'        => 'Project Categories',
+			'label'        =>  __('Project Categories'),
 			'query_var'    => true,
 			'rewrite'      => array( 'slug' => 'project-category' )
 		) );
