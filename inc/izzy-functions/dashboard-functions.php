@@ -1,5 +1,8 @@
 <?php
-// Project Custom Post Type
+/**
+ * Initializing the Project Custom Post type.
+ *
+ */
 function izzy_project_init() {
 // set up project labels
 	$labels = array(
@@ -57,6 +60,10 @@ add_action( 'init', 'izzy_project_init' );
 
 /**
  * Change the wording of actions regarding projects.
+ *
+ * @param array $messages Array of dashboard messages.
+ *
+ * @return array $messages The messages array appropriate for the Project post type.
  */
 
 function my_updated_messages( $messages ) {

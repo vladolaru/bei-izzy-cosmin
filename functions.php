@@ -228,10 +228,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Load all izzy widgets.
+ * Loads the Latest Posts widget.
  */
 require get_template_directory() . '/inc/widgets/class-izzy-widget-latest-posts.php';
 
+/**
+ * Loads the Latest Projects widget.
+ */
 require get_template_directory() . '/inc/widgets/class-izzy-widget-latest-projects.php';
 
 /**

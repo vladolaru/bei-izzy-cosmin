@@ -1,6 +1,6 @@
 <?php
 /**
- * Widget API: WP_Widget_Recent_Posts class
+ * Widget API: WP_Widget_Latest_Projects class
  *
  * @package WordPress
  * @subpackage Widgets
@@ -124,7 +124,7 @@ class izzy_Widget_Latest_Projects extends WP_Widget {
 	}
 
 	/**
-	 * Outputs the settings form for the Latest Posts widget.
+	 * Outputs the settings form for the Latest Projects widget.
 	 *
 	 * @since 2.8.0
 	 *

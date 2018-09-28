@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Outputs, using echo, the gallery of images that the project has, in the form of a slider.
+ *
+ * It uses the Slick jQuery plugin and has strong connections with the slick.css file.
+ */
 if ( ! function_exists( 'izzy_project_slider' ) ) {
 
 	function izzy_project_slider() {

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Outputs the post archive template and the desired details for every post.
+ *
+ */
 if ( ! function_exists( 'izzy_archive_post' ) ) {
 
 	function izzy_archive_post() {
@@ -35,7 +39,10 @@ if ( ! function_exists( 'izzy_archive_post' ) ) {
 	}
 }
 
-
+/**
+ * Outputs the single post template and author details, if option is checked.
+ *
+ */
 if ( ! function_exists( 'izzy_single_post' ) ) {
 
 	function izzy_single_post() {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Widget API: WP_Widget_Recent_Posts class
+ * Widget API: WP_Widget_Latest_Posts class
  *
  * @package WordPress
  * @subpackage Widgets
@@ -8,7 +8,7 @@
  */
 
 /**
- * Core class used to implement a Recent Posts widget.
+ * Core class used to implement a Latest Posts widget.
  *
  * @since 2.8.0
  *

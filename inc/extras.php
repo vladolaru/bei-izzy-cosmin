@@ -10,7 +10,13 @@ require 'izzy-functions/project-slider-functions.php';
 
 require 'izzy-functions/widgets-functions.php';
 
-//Custom excerpt
+/**
+ * Hooks a custom excerpt length, using a filter, in case the type of the post is either project or post.
+ *
+ * @param int $length The default value of an excerpt.
+ *
+ * @return int Either the default $length value, or a post/project custom excerpt length.
+ */
 function custom_excerpt_length( $length ) {
 	if ( get_post_type()=='project' ) {
 		return 25;

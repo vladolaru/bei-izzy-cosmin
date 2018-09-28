@@ -1,7 +1,8 @@
 <?php
 
 /**
- * Display footer widgets.
+ * Displays footer widgets, the footer having 2 widget areas.
+ *
  */
 if ( ! function_exists( 'izzy_footer_widgets' ) ) {
 
@@ -26,7 +27,8 @@ if ( ! function_exists( 'izzy_footer_widgets' ) ) {
 }
 
 /**
- * Display front page widgets.
+ * Displays front page widgets, the page having 3 front-page widget areas.
+ *
  */
 if ( ! function_exists( 'izzy_front_page_widgets' ) ) {
 
