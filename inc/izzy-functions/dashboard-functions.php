@@ -6,8 +6,8 @@
 function izzy_project_init() {
 // set up project labels
 	$labels = array(
-		'name'               =>  __(' Projects'),
-		'singular_name'      =>  __(' Project'),
+		'name'               =>  __('Projects'),
+		'singular_name'      =>  __('Project'),
 		'add_new'            =>  __(' Add New Project'),
 		'add_new_item'       =>  __(' Add New Project'),
 		'edit_item'          =>  __(' Edit Project'),
@@ -44,7 +44,7 @@ function izzy_project_init() {
 			'page-attributes'
 		)
 	);
-	register_post_type(  __('project'), $args );
+	register_post_type('project', $args );
 
 // register taxonomy
 	register_taxonomy(  __('project_category'), 'project',

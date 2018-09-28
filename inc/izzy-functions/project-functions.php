@@ -147,7 +147,7 @@ if ( ! function_exists( 'izzy_archive_project' ) ) {
         <div class="details-block">
 		<?php
 		izzy_project_details();
-		echo "<p class='excerpt'>" . esc_html__( get_the_excerpt() ) . "</p>";
+		echo "<p class='excerpt'>" . esc_html( get_the_excerpt() ) . "</p>";
 		echo "<div class='continue-reading'>
         <a href='" . esc_url( get_permalink() ) . "' rel='bookmark'>" . __( "Continue Reading" ) . "</a></div></div>";
 
