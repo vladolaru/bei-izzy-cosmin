@@ -9,7 +9,7 @@ if ( ! function_exists( 'izzy_project_year' ) ) {
 	function izzy_project_year() {
 		global $wp_query;
 		$postid = $wp_query->post->ID;
-		echo '<p class="project-details">' . __( 'Release year: ' ) . get_field( 'year', $postid ) . '</p>';
+		echo '<p class="project-details">' . __( 'Release year: ','izzy' ) . get_field( 'year', $postid ) . '</p>';
 		wp_reset_query();
 	}
 
@@ -25,9 +25,9 @@ if ( ! function_exists( 'izzy_project_customer' ) ) {
 		global $wp_query;
 		$postid = $wp_query->post->ID;
 		if ( get_post_meta( $postid, 'customer', true ) == false ) {
-			echo '<p class="project-details">' . __( 'No customer for this theme yet.' ) . '</p>';
+			echo '<p class="project-details">' . __( 'No customer for this theme yet.','izzy' ) . '</p>';
 		} else {
-			echo '<p class="project-details">' . __( 'Customer: ' ) . get_post_meta( $postid, 'customer', true ) . '</p>';
+			echo '<p class="project-details">' . __( 'Customer: ','izzy' ) . get_post_meta( $postid, 'customer', true ) . '</p>';
 		}
 
 		wp_reset_query();
@@ -44,18 +44,18 @@ if ( ! function_exists( 'izzy_project_categories' ) ) {
 	function izzy_project_categories() {
 		$categories = get_the_terms( get_the_ID(), 'project_category' );
 		if ( is_array( $categories ) && ! empty( $categories ) ) {
-			echo '<p class="project-details">' . __( "Categories: " );
+			echo '<p class="project-details">' . __( "Categories: ",'izzy' );
 			foreach ( $categories as $category ) {
 				if ( 1 == count( $categories ) ) {
-					esc_html_e( $category->name );
+					esc_html_e( $category->name,'izzy' );
 				} else {
-					esc_html_e( $category->name );
+					esc_html_e( $category->name,'izzy' );
 					echo ', ';
 				}
 			}
 			echo '</p>';
 		} else {
-			echo '<p class="project-details">' . __( "Categories: None" ) . '</p>';
+			echo '<p class="project-details">' . __( "Categories: None",'izzy' ) . '</p>';
 		}
 	}
 
@@ -68,13 +68,13 @@ if ( ! function_exists( 'izzy_project_details' ) ) {
 	 *
 	 */
 	function izzy_project_details() {
-		if ( get_theme_mod( 'project-show-categories-on-project-archive-page.' ) ) {
+		if ( get_theme_mod( 'project-1' ) ) {
 			izzy_project_categories();
 		}
-		if ( get_theme_mod( 'project-show-year-on-project-archive-page.' ) ) {
+		if ( get_theme_mod( 'project-3' ) ) {
 			izzy_project_year();
 		}
-		if ( get_theme_mod( 'project-show-customer-on-project-archive-page.' ) ) {
+		if ( get_theme_mod( 'project-2' ) ) {
 			izzy_project_customer();
 		}
 	}
@@ -141,7 +141,7 @@ if ( ! function_exists( 'izzy_archive_project' ) ) {
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'medium', [ 'class' => 'project-archive-thumbnail' ] );
 		} else {
-			echo "<div class='no-thumbnail'><p>" . __( "There is no featured image available." ) . "</p></div>";
+			echo "<div class='no-thumbnail'><p>" . __( "There is no featured image available.",'izzy' ) . "</p></div>";
 		}
 		?>
         <div class="details-block">
@@ -149,7 +149,7 @@ if ( ! function_exists( 'izzy_archive_project' ) ) {
 		izzy_project_details();
 		echo "<p class='excerpt'>" . esc_html( get_the_excerpt() ) . "</p>";
 		echo "<div class='continue-reading'>
-        <a href='" . esc_url( get_permalink() ) . "' rel='bookmark'>" . __( "Continue Reading" ) . "</a></div></div>";
+        <a href='" . esc_url( get_permalink() ) . "' rel='bookmark'>" . __( "Continue Reading",'izzy' ) . "</a></div></div>";
 
 	}
 }

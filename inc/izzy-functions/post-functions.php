@@ -10,32 +10,32 @@ if ( ! function_exists( 'izzy_archive_post' ) ) {
 
 		the_title( '<h2 class="entry-title-post-archive"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 
-		if(	has_post_thumbnail() && get_theme_mod( 'post-show-featured-image-on-post-archive-page.' ) ) {
+		if(	has_post_thumbnail() && get_theme_mod( 'post-4' ) ) {
 			the_post_thumbnail( 'medium', [ 'class' => 'post-archive-thumbnail' ] );
 		}
 		else
 			{
-				echo "<div class='no-thumbnail'><p>" . __("There is no featured image available.") . "</p></div>";
+				echo "<div class='no-thumbnail'><p>" . __("There is no featured image available.",'izzy') . "</p></div>";
 			}
 
 		echo "<div class='details-block-post'>";
 		echo "<div class='entry-meta'>";
-		if(get_theme_mod( 'post-show-date-on-post-archive-page.' ) ) {
+		if(get_theme_mod( 'post-6' ) ) {
 			izzy_posted_on();
 		}
 		echo "<br>";
-		if(get_theme_mod( 'post-show-author-on-post-archive-page.' ) ) {
+		if(get_theme_mod( 'post-7' ) ) {
 			izzy_posted_by();
 		}
 		echo "<br>";
-		if(get_theme_mod( 'post-show-categories-on-post-archive-page.' ) ) {
+		if(get_theme_mod( 'post-5' ) ) {
 			izzy_entry_footer();
 		}
 		echo "</div><!-- .entry-meta -->";
 		echo "<br>";
 		echo "<p class='excerpt'>" . get_the_excerpt() . "</p>";
 		echo "<div class='continue-reading'>
-        <a href='" . esc_url( get_permalink() ) . "' rel='bookmark'>" . __("Continue Reading"). "</a></div></div><!-- .details-block-post -->";
+        <a href='" . esc_url( get_permalink() ) . "' rel='bookmark'>" . __("Continue Reading",'izzy'). "</a></div></div><!-- .details-block-post -->";
 	}
 }
 
@@ -59,14 +59,14 @@ if ( ! function_exists( 'izzy_single_post' ) ) {
 
 		echo "</div><!-- .entry-meta -->";
 		echo "</header><!-- .entry-header -->";
-		if(	has_post_thumbnail() && get_theme_mod( 'post-show-featured-image-on-post-archive-page.' ) ) {
+		if(	has_post_thumbnail() && get_theme_mod( 'post-9' ) ) {
 			echo "<div class='post-image'>";
 			the_post_thumbnail( 'large', [ 'class' => 'post-single-thumbnail' ] );
 			echo "</div>";
 		}
 		else
 		{
-			echo "<div class='no-thumbnail-single-post'><p>" . __("There is no featured image available for this post.") . "</p></div>";
+			echo "<div class='no-thumbnail-single-post'><p>" . __("There is no featured image available for this post.","izzy") . "</p></div>";
 		}
 
 		echo "<div class='entry-content'>";
@@ -91,7 +91,7 @@ if ( ! function_exists( 'izzy_single_post' ) ) {
 
 		echo "</div><!-- .entry-content -->" . "<br>" . "<br>";
 
-		if(get_theme_mod( 'post-show-author-box-on-single-post-page.' ) ) {
+		if(get_theme_mod( 'post-8' ) ) {
 			get_template_part('/inc/custom-author-box');
 		}
 

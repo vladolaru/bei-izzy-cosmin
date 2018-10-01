@@ -24,10 +24,10 @@ class izzy_Widget_Latest_Posts extends WP_Widget {
 	public function __construct() {
 		$widget_ops = array(
 			'classname' => 'widget_latest_entries',
-			'description' => __( 'Your site&#8217;s most latest Posts.' ),
+			'description' => __( 'Your site&#8217;s most latest Posts.', 'izzy' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'latest-posts', __( 'Latest Posts' ), $widget_ops );
+		parent::__construct( 'latest-posts', __( 'Latest Posts', 'izzy' ), $widget_ops );
 		$this->alt_option_name = 'widget_latest_entries';
 	}
 
@@ -45,7 +45,7 @@ class izzy_Widget_Latest_Posts extends WP_Widget {
 			$args['widget_id'] = $this->id;
 		}
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Latest Posts' );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Latest Posts', 'izzy' );
 
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
@@ -88,7 +88,7 @@ class izzy_Widget_Latest_Posts extends WP_Widget {
 			<?php foreach ( $r->posts as $latest_post ) : ?>
 				<?php
 				$post_title = get_the_title( $latest_post->ID );
-				$title      = ( ! empty( $post_title ) ) ? $post_title : __( '(no title)' );
+				$title      = ( ! empty( $post_title ) ) ? $post_title : __( '(no title)', 'izzy' );
 				?>
 				<li>
 					<a href="<?php the_permalink( $latest_post->ID ); ?>"><?php echo $title ; ?></a>
@@ -132,14 +132,14 @@ class izzy_Widget_Latest_Posts extends WP_Widget {
 		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
 		?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'izzy' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'izzy' ); ?></label>
 			<input class="tiny-text" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" step="1" min="1" value="<?php echo $number; ?>" size="3" /></p>
 
 		<p><input class="checkbox" type="checkbox"<?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
-			<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?' ); ?></label></p>
+			<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'izzy' ); ?></label></p>
 		<?php
 	}
 }

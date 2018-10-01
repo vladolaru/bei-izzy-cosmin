@@ -3,7 +3,7 @@
 </h4>
 
 <div class="postauthor-wrap">
- <span itemscope itemprop="image" alt="Photo of <?php the_author_meta( 'display_name' ); ?>">
+ <span itemscope itemprop="image" alt="Photo of <?php esc_attr_e(get_the_author_meta( 'display_name' ),'izzy'); ?>">
  <?php if(function_exists('get_avatar')) { echo get_avatar( get_the_author_meta('email'), '100' ); } ?>
  </span>
 
@@ -20,13 +20,13 @@
 	      echo "</p>"; ?>
 	<span class="post-author-links">
  <?php if (get_the_author_meta('facebook') != ''): ?>
-	 <a class="author-link f" title="Follow on Facebook" href="<?php echo get_the_author_meta('facebook'); ?>" target="_blank">
+	 <a class="author-link f" title="Follow on Facebook" href="<?php esc_html_e(get_the_author_meta('facebook'),'izzy'); ?>" target="_blank">
  <i class="fa fa-facebook">
  </i>
  </a>
  <?php endif; ?>
 		<?php if (get_the_author_meta('twitter') != ''): ?>
-			<a class="author-link t" title="Follow on Twitter" href="https://twitter.com/<?php echo get_the_author_meta('twitter'); ?>" target="_blank">
+			<a class="author-link t" title="Follow on Twitter" href="https://twitter.com/<?php esc_html_e(get_the_author_meta('twitter'),'izzy'); ?>" target="_blank">
  <i class="fa fa-twitter">
  </i>
  </a>

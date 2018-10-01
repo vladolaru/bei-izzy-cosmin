@@ -6,19 +6,19 @@
 function izzy_project_init() {
 // set up project labels
 	$labels = array(
-		'name'               =>  __('Projects'),
-		'singular_name'      =>  __('Project'),
-		'add_new'            =>  __(' Add New Project'),
-		'add_new_item'       =>  __(' Add New Project'),
-		'edit_item'          =>  __(' Edit Project'),
-		'new_item'           =>  __(' New Project'),
-		'all_items'          =>  __(' All Projects'),
-		'view_item'          =>  __(' View Project'),
-		'search_items'       =>  __(' Search Projects'),
-		'not_found'          =>  __(' No Projects Found'),
-		'not_found_in_trash' =>  __(' No Projects found in Trash'),
+		'name'               =>  __('Projects','izzy'),
+		'singular_name'      =>  __('Project','izzy'),
+		'add_new'            =>  __(' Add New Project','izzy'),
+		'add_new_item'       =>  __(' Add New Project','izzy'),
+		'edit_item'          =>  __(' Edit Project','izzy'),
+		'new_item'           =>  __(' New Project','izzy'),
+		'all_items'          =>  __(' All Projects','izzy'),
+		'view_item'          =>  __(' View Project','izzy'),
+		'search_items'       =>  __(' Search Projects','izzy'),
+		'not_found'          =>  __(' No Projects Found','izzy'),
+		'not_found_in_trash' =>  __(' No Projects found in Trash','izzy'),
 		'parent_item_colon'  => '',
-		'menu_name'          =>  __('Projects'),
+		'menu_name'          =>  __('Projects','izzy'),
 	);
 
 // register post type
@@ -47,10 +47,10 @@ function izzy_project_init() {
 	register_post_type('project', $args );
 
 // register taxonomy
-	register_taxonomy(  __('project_category'), 'project',
+	register_taxonomy(  __('project_category','izzy'), 'project',
 		array(
 			'hierarchical' => true,
-			'label'        =>  __('Project Categories'),
+			'label'        =>  __('Project Categories','izzy'),
 			'query_var'    => true,
 			'rewrite'      => array( 'slug' => 'project-category' )
 		) );
@@ -70,16 +70,16 @@ function my_updated_messages( $messages ) {
 	global $post, $post_ID;
 	$messages['project'] = array(
 		0  => '’',
-		1  => sprintf( __( 'Project updated. <a href="%s">View project</a>' ), esc_url( get_permalink( $post_ID ) ) ),
-		2  => __( 'Custom field updated.' ),
-		3  => __( 'Custom field deleted.' ),
-		4  => __( 'Project updated.' ),
-		5  => isset( $_GET['revision'] ) ? sprintf( __( 'Project restored to revision from %s' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-		6  => sprintf( __( 'Project published. <a href="%s">View project</a>' ), esc_url( get_permalink( $post_ID ) ) ),
-		7  => __( 'Project saved.' ),
-		8  => sprintf( __( 'Project submitted. <a target="_blank" href="%s">Preview project</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
-		9  => sprintf( __( 'Project scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview project</a>' ), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
-		10 => sprintf( __( 'Project draft updated. <a target="_blank" href="%s">Preview project</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+		1  => sprintf( __( 'Project updated. <a href="%s">View project</a>', 'izzy' ), esc_url( get_permalink( $post_ID ) ) ),
+		2  => __( 'Custom field updated.','izzy' ),
+		3  => __( 'Custom field deleted.','izzy' ),
+		4  => __( 'Project updated.','izzy' ),
+		5  => isset( $_GET['revision'] ) ? sprintf( __( 'Project restored to revision from %s','izzy' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+		6  => sprintf( __( 'Project published. <a href="%s">View project</a>','izzy' ), esc_url( get_permalink( $post_ID ) ) ),
+		7  => __( 'Project saved.', 'izzy' ),
+		8  => sprintf( __( 'Project submitted. <a target="_blank" href="%s">Preview project</a>','izzy' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+		9  => sprintf( __( 'Project scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview project</a>','izzy' ), date_i18n( __( 'M j, Y @ G:i', 'izzy' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
+		10 => sprintf( __( 'Project draft updated. <a target="_blank" href="%s">Preview project</a>','izzy' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
 	);
 
 	return $messages;
